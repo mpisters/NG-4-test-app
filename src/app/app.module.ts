@@ -5,15 +5,13 @@ import { AppComponent } from './app.component';
 import { SimpleFormComponent } from './simple-form/simple-form.component';
 import { MailService } from './mail.service';
 import { FormComponent } from './form/form.component';
-import { HomeComponent } from './home-component/home-component.component';
 import { routes } from './app.routes';
 
 @NgModule({
   declarations: [
     AppComponent,
     SimpleFormComponent,
-    FormComponent,
-    HomeComponent
+    FormComponent
   ],
   imports: [
     BrowserModule, FormsModule, routes
