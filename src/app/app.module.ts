@@ -6,8 +6,6 @@ import { SimpleFormComponent } from './simple-form/simple-form.component';
 import { MailService } from './mail.service';
 import { FormComponent } from './form/form.component';
 import { HomeComponent } from './home-component/home-component.component';
-import { routes} from './app.routes';
-import {RouterModule} from "@angular/router";
 
 @NgModule({
   declarations: [
@@ -17,7 +15,7 @@ import {RouterModule} from "@angular/router";
     HomeComponent
   ],
   imports: [
-    BrowserModule, FormsModule, RouterModule.forRoot(routes)
+    BrowserModule, FormsModule
   ],
   providers: [{provide: 'mail', useClass: MailService}],
   bootstrap: [AppComponent]
