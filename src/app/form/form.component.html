@@ -1,0 +1,22 @@
+
+<form #formRef="ngForm" (ngSubmit) = "onSubmit(formRef.value)">
+  <fieldset ngModelGroup="login">
+    <input name="username" required type="text" [(ngModel)]="username" #usernameRef="ngModel" minlength="3">
+    <div *ngIf="usernameRef.errors?.required">This field is required</div>
+    <div *ngIf="usernameRef.errors?.minlength">This field must be longer than {{usernameRef.errors?.minlength.requiredLength}} characters. You only typed {{usernameRef.errors?.minlength.actualLength}}.</div>
+    <input type="password" ngModel name="password">
+  </fieldset>
+  <div *ngFor="let location of locations">
+    <input [id] = "location" name="location" type="radio" [ngModel]="locations[0]" [value]="location">
+  <label [attr.for]="location">{{location}}</label>
+  </div>
+  <select name="location" ngModel>
+    <option
+    *ngFor="let location of locations"
+    [value]="location">{{location}}</option>
+  </select>
+
+<button type="submit">Submit</button>
+</form>
+{{formRef.value | json}}
+{{formRef.valid | json}}

@@ -1,0 +1,9 @@
+:host{
+  display: flex;
+  flex-direction: column-reverse;
+  color: red;
+
+}
+#myInput {
+  margin: 10px;
+}
